@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="168dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Docker"
+            android:id="@+id/textView15"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#3a38c3"
+            android:textSize="@android:dimen/app_icon_size"
+            android:textIsSelectable="false"
+            android:layout_weight="0.04" />
+
+        <TextView
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="      Mobile Management"
+            android:id="@+id/textView16"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#1902ff"
+            android:textSize="@dimen/abc_action_bar_stacked_max_height"
+            android:layout_weight="0.09" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.84"
+            android:weightSum="1">
+
+            <Spinner
+            android:id="@+id/dynamic_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+                android:spinnerMode="dropdown" />
+
+            <ExpandableListView
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:id="@+id/expandableListView" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/scrollView"
+                android:layout_gravity="center_horizontal"
+                android:fillViewport="true" >
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit"
+                        android:id="@+id/button9" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Connect"
+                        android:id="@+id/button10" />
+                </LinearLayout>
+            </ScrollView>
+
+
+            - See more at:
+            http://www.ahotbrew.com/android-dropdown-spinner-example/#sthash.MTIeFSho.dpuf
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

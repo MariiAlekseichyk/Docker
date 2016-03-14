@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Just java</string>
+    <string name="Username">Username</string>
+    <string name="Save_connection">Save</string>
+    <string name="string">Save</string>
+    <string name="port">Port</string>
+</resources>
