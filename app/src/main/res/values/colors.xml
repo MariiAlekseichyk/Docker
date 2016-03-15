@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="list_divider">#878C8F</color>
+    <color name="list_text">#33c6fb</color>
+    <color name="list_row_start_color">#FCFCFC</color>
+    <color name="row_list_end_color">#FCFCFC</color>
+    <color name="row_list_hover_start_color">#C4CAD0</color>
+    <color name="row_list_hover_end_color">#C4CAD0</color>
 </resources>

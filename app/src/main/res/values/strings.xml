@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">Just java</string>
+    <string name="app_name">Docker MM</string>
     <string name="Username">Username</string>
     <string name="Save_connection">Save</string>
     <string name="string">Save</string>
     <string name="port">Port</string>
+    <string name="conn_status"></string>
 </resources>
