@@ -100,7 +100,8 @@ public class DockerEntity {
     public DockerEntity(String host, String portNum, Context incoming, ProgressDialog pDialog) {
         try {
             forManipulations = incoming;
-            if (!(portNum.equals(""))) {portNum=":" + portNum;};
+            pDialog = this.pDialog;
+            if (portNum!=null) {portNum=":" + portNum;};
             connectionHost += host + portNum;
                 if (connectionHost.equals("http://")) {
                 throw new CustomException("Empty connection info ....");

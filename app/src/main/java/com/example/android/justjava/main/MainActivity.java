@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -17,13 +18,13 @@ import com.example.android.justjava.connection.DockerEntity;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText tvHostname;
-    EditText tvPort;
-    EditText tvConnectionName;
-    CheckBox saveConn;
-    String hostnameAddr, portNum, conName;
-    ProgressDialog pDialog;
-    DockerEntity connTestEnt;
+    protected EditText tvHostname;
+    protected EditText tvPort;
+    protected EditText tvConnectionName;
+    protected CheckBox saveConn;
+    protected String hostnameAddr, portNum, conName;
+    protected ProgressDialog pDialog;
+    protected DockerEntity connTestEnt;
     protected  boolean  saveConnData;
 
     @Override
@@ -57,12 +58,15 @@ public class MainActivity extends AppCompatActivity {
     protected void getInputData (){
         //get values
         hostnameAddr = tvHostname.getText().toString();
-        if (hostnameAddr.contains(" ") | hostnameAddr.isEmpty()){
-            Toast.makeText(getApplicationContext(), "Hostname can not be empty or have whitespace char", Toast.LENGTH_LONG).show();
+        Log.d("hostname add ", "> "+ hostnameAddr );
+        if (hostnameAddr.isEmpty()| hostnameAddr.contains(" ")){
+            Toast.makeText(MainActivity.this, "Hostname can not be empty or have whitespace char", Toast.LENGTH_LONG).show();
             tvHostname.setText(null);
         }else {
             portNum = tvPort.getText().toString();
+            Log.d("port ", "> "+portNum );
             conName = tvConnectionName.getText().toString();
+            Log.d("conn name", "> "+conName);
         }
     }
 
