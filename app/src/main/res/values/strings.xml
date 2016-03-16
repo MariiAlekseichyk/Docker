@@ -5,4 +5,5 @@
     <string name="string">Save</string>
     <string name="port">Port</string>
     <string name="conn_status"></string>
+    <string name="saveoption">Store credentials</string>
 </resources>

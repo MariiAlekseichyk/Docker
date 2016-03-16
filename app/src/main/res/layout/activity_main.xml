@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".main.MainActivity">
+    tools:context=".main.MainActivity"
+    android:clickable="true"
+    android:gravity="right">
 
     <LinearLayout
         android:orientation="vertical"
@@ -36,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="My connection"
+            android:hint="My connection"
             android:ems="10"
             android:id="@+id/connection_name"
             android:layout_weight="1"
@@ -58,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="My domain"
+            android:hint="My domain"
             android:ems="10"
             android:id="@+id/hostname"
             android:layout_weight="1"
@@ -83,24 +85,43 @@
             android:inputType="number"
             android:ems="10"
             android:id="@+id/port"
-            android:text="5001"
+            android:hint="5001"
             android:layout_weight="1"
             android:textSize="20dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/saveoption"
+            android:id="@+id/checkBox"
+            android:layout_weight="1"
+            android:checked="true"
+            android:clickable="true"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="22dp"
+            android:textAlignment="gravity"
+            android:elegantTextHeight="true"
+            android:layout_gravity="center"
+            android:onClick="invertOption()" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:weightSum="1"
-            android:layout_weight="1.2">
+            android:layout_weight="1.2"
+            android:layout_gravity="bottom"
+            android:paddingTop="10dp">
 
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Test connection"
-                    android:id="@+id/button"
+                    android:id="@+id/testConn"
                     android:layout_weight="0.5"
-                android:layout_marginLeft="0dp" />
+                android:layout_marginLeft="0dp"
+                android:onClick="testConnectionHandler" />
 
             <Button
                     android:layout_width="match_parent"
@@ -121,7 +142,10 @@
             android:layout_weight="2"
             android:textAlignment="center"
             android:gravity="center"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+            android:visibility="gone" />
+
+
 
     </LinearLayout>
 </RelativeLayout>
