@@ -174,7 +174,7 @@ public class DockerEntity extends AppCompatActivity {
 
                                 // adding each child node to HashMap key => value
                                 node.put(TAG_ID, id);
-                                node.put(TAG_REPOTAGS, name);
+                                node.put(TAG_REPOTAGS, name.replaceAll("[^a-zA-Z0-9/:]", ""));
                                 node.put(TAG_CREATED, imageDate);
                                 node.put(TAG_VIRTUALSIZE, size);
                                 break;
@@ -214,7 +214,7 @@ public class DockerEntity extends AppCompatActivity {
 
 
                             //Add values to node.
-                            dockerNode.put(TAG_NAME, name..replaceAll( ( $ | '"' | '\\'), "" );
+                            dockerNode.put(TAG_NAME, name);
                             dockerNode.put(TAG_OS, os);
                             dockerNode.put(TAG_KERNEL_VERSION, kernelVer);
                             dockerNode.put(TAG_CONTAINERS_COUNT, contCount);
