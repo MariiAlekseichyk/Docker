@@ -24,7 +24,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Mobile Manager"
+        android:text="@string/splash"
         android:id="@+id/textView2"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"

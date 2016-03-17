@@ -116,7 +116,7 @@
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Test connection"
+                    android:text="@string/test_con"
                     android:id="@+id/testConn"
                     android:layout_weight="0.5"
                 android:layout_marginLeft="0dp"
@@ -125,9 +125,10 @@
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Connect"
+                    android:text="@string/con"
                     android:id="@+id/connect"
-                    android:layout_weight="0.5" />
+                    android:layout_weight="0.5"
+                android:onClick="makeConnection" />
 
         </LinearLayout>
 
@@ -135,7 +136,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/conn_status"
             android:id="@+id/connection_status"
             android:layout_gravity="center_horizontal"
             android:layout_weight="2"

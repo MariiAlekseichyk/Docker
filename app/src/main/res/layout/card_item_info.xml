@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp">
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:transitionName="infoexpand"
+        android:clickable="true"
+        android:id="@+id/ivProfile"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardElevation="5dp"
+        card_view:cardCornerRadius="6dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/docker_hostname"
+                android:text="@string/docker_hostname"
+                android:layout_alignParentTop="true"
+                android:gravity="center_horizontal"
+                android:textSize="27dp"
+                android:textStyle="bold"
+                android:textColor="@color/list_text" />
+
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/os_line"
+                android:layout_below="@+id/docker_hostname"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:paddingTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/os_holder"
+                    android:textStyle="bold"
+                    android:text="@string/os_holder"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:textColor="@color/list_text"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewEnd"
+                    android:id="@+id/os_holder_val"
+                    android:text="@string/os_holder_val"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/os_line"
+                android:id="@+id/kernel_line"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:paddingTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/kernel_holder"
+                    android:textStyle="bold"
+                    android:text="@string/kernel_holder"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:textColor="@color/list_text"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewEnd"
+                    android:id="@+id/kernel_holder_val"
+                    android:text="@string/kernel_holder_val"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/kernel_line"
+                android:id="@+id/count_line"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:paddingTop="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/containers_count"
+                    android:text="@string/containers_count"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_weight="0.8"
+                    android:textColor="@color/list_text"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/con_cun_val"
+                    android:text="@string/con_cun_val"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_weight="0.2"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/img_count"
+                    android:textSize="20sp"
+                    android:paddingRight="9dp"
+                    android:textStyle="bold"
+                    android:text="@string/img_count"
+                    android:layout_weight="0.8"
+                    android:textColor="@color/list_text"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/img_count_val"
+                    android:textSize="20sp"
+                    android:text="@string/img_count_val"
+                    android:textAlignment="viewEnd"
+                    android:textStyle="bold"
+                    android:layout_weight="0.2"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

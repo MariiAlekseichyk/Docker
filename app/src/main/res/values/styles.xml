@@ -6,6 +6,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowContentTransitions">true</item>
+
     </style>
     <style name="Button">
         <item name="android:textColor">#FFFFFF</item>
@@ -17,6 +19,7 @@
         <item name="android:translationZ">1dp</item>
         <item name="android:background">#2196f3</item>
     </style>
+
     <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
         <!-- Used for the buttons -->
         <item name="colorAccent">#FFFFFF</item>

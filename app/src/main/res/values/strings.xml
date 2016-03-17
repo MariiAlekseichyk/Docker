@@ -1,9 +1,24 @@
 <resources>
     <string name="app_name">Docker MM</string>
-    <string name="Username">Username</string>
-    <string name="Save_connection">Save</string>
-    <string name="string">Save</string>
+    <string name="splash">Mobile Manager</string>
+    <string name="test_con">Test connection</string>
+    <string name="con">Connect</string>
     <string name="port">Port</string>
-    <string name="conn_status"></string>
     <string name="saveoption">Store credentials</string>
+    <string name="images_tasks">List images</string>
+    <string name="host_task">Host info</string>
+    <string name="host_task_desk">Docker host information</string>
+    <string name="os_holder">Operating System:</string>
+    <string name="os_holder_val">System:</string>
+    <string name="image_task_desk">List available images on docker host:</string>
+    <string name="containers_count">Containers: </string>
+    <string name="con_cun_val">0</string>
+    <string name="img_count">Images: </string>
+    <string name="img_count_val">0</string>
+    <string name="docker_hostname">DockerServerHostName</string>
+    <string name="kernel_holder_val">version.1.1.1</string>
+    <string name="kernel_holder">Kernel: </string>
+    <string name="date_holder">Created: </string>
+    <string name="virts_holder">Virtual size: </string>
+    virts_holder
 </resources>
