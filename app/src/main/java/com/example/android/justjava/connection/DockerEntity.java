@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 
 import com.example.android.justjava.R;
 import com.example.android.justjava.main.SessionActivity;
+import com.example.android.justjava.main.activity_images;
 import com.example.android.justjava.main.card_item_info;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -53,9 +54,9 @@ public class DockerEntity extends AppCompatActivity {
     //DockerURL
     protected String connectionHost ="http://";
     protected Context forManipulations;
-
+    protected View someView;
     //Parsed value arrays
-    protected ArrayList<HashMap<String, String>> parsedList;
+    public ArrayList<HashMap<String, String>> parsedList;
     public HashMap<String, String> dockerNode;
     //protected ArrayList<HashMap<String, String>> containersList; // RESERVED <_<
 
@@ -112,6 +113,7 @@ public class DockerEntity extends AppCompatActivity {
             forManipulations = pDialog.getContext();
             this.pDialog = pDialog;
             dockerNode = new HashMap<String, String>();
+
             if (portNum!=null) {portNum=":" + portNum;};
             connectionHost += host + portNum;
             editor = forManipulations.getSharedPreferences("docker_host", 0).edit();
@@ -132,6 +134,7 @@ public class DockerEntity extends AppCompatActivity {
             forManipulations = pDialog.getContext();
             this.pDialog = pDialog;
             dockerNode = new HashMap<String, String>();
+            parsedList = new ArrayList<HashMap<String, String>>();
             if (fullHost!=null) connectionHost= fullHost;
             else {
                 throw new CustomException("Empty connection info ....");
@@ -187,6 +190,8 @@ public class DockerEntity extends AppCompatActivity {
                         // adding parsed object to the list
                         parsedList.add(node);
                     }
+                    pDialog.hide();
+                    SessionActivity.jumpToImg((ArrayList<HashMap<String, String>>) parsedList,someView);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -255,6 +260,13 @@ public class DockerEntity extends AppCompatActivity {
 
     }
 
+    public void getApiRequest(final int reqID, View v){
+        someView = v;
+        getApiRequest(reqID);
+
+    }
+
+
 
     public void getApiRequest(final int reqID) {
         try {
@@ -266,10 +278,10 @@ public class DockerEntity extends AppCompatActivity {
             client.setMaxRetriesAndTimeout(1,15000);
 
             switch (reqID) {
-                case 0:case -1:case -2:
+                case DOCKER_INFO:case DOCKER_TEST:case DOCKER_TEST_SILENT:
                     url = connectionHost + API_LIST_INFO;
                     break;
-                case 2:
+                case DOCKER_IMAGES:
                     url = connectionHost + API_LIST_IMAGES;
                     break;
                 default:
