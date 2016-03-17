@@ -229,6 +229,9 @@ public class DockerEntity extends AppCompatActivity {
                             //Travel to home activity
                             pDialog.hide();
                             navigatetoHomeActivity(forManipulations);
+                            break;
+                        case DOCKER_IMAGES:
+                            pDialog.hide();
                         default:
                             pDialog.hide();
                             throw new JSONException("Incorrect option selection......");

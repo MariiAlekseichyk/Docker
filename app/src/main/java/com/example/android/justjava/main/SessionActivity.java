@@ -47,16 +47,17 @@ public class SessionActivity extends AppCompatActivity {
 
     public void gcForImages(View v) {
 
-        connTestEnt.getApiRequest(DockerEntity.DOCKER_IMAGES);
+        connTestEnt.getApiRequest(DockerEntity.DOCKER_IMAGES, v);
 
     }
 
     public static void jumpToImg (ArrayList<HashMap<String,String>> arr, View v){
         Activity context = (Activity) v.getContext();
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(context, v, "cardImage");
         Intent intent = new Intent(context, activity_images.class);
         intent.putExtra("hashArr", arr);
-        context.startActivity(intent, options.toBundle());
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        context.startActivity(intent);
+
     }
 
 }

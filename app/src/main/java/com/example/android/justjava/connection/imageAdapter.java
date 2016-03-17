@@ -20,7 +20,7 @@ import java.util.List;
 public class imageAdapter extends  RecyclerView.Adapter<imageAdapter.ViewHolder> {
 
     // / Store a member variable for the contacts
-    private List<HashMap<String,String>> mImages;
+    private ArrayList<HashMap<String,String>> mImages;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // Your holder should contain a member variable
@@ -48,7 +48,7 @@ public class imageAdapter extends  RecyclerView.Adapter<imageAdapter.ViewHolder>
 
 
     // Pass in the contact array into the constructor
-    public imageAdapter(List<HashMap<String,String>> images) {
+    public imageAdapter(ArrayList<HashMap<String,String>> images) {
         mImages = images;
     }
 
