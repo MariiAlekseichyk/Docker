@@ -190,8 +190,10 @@ public class DockerEntity extends AppCompatActivity {
                         // adding parsed object to the list
                         parsedList.add(node);
                     }
+
+                    SessionActivity.ama=(ArrayList<HashMap<String, String>>) parsedList;
                     pDialog.hide();
-                    SessionActivity.jumpToImg((ArrayList<HashMap<String, String>>) parsedList,someView);
+                    SessionActivity.jumpToImg(someView);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -212,7 +214,7 @@ public class DockerEntity extends AppCompatActivity {
 
 
                             //Add values to node.
-                            dockerNode.put(TAG_NAME, name);
+                            dockerNode.put(TAG_NAME, name..replaceAll( ( $ | '"' | '\\'), "" );
                             dockerNode.put(TAG_OS, os);
                             dockerNode.put(TAG_KERNEL_VERSION, kernelVer);
                             dockerNode.put(TAG_CONTAINERS_COUNT, contCount);
@@ -304,8 +306,7 @@ public class DockerEntity extends AppCompatActivity {
     //Convert to understandable date
     protected String convertUnixDate (long unixSeconds){
         Date date = new Date(unixSeconds*1000L); // *1000 is to convert seconds to milliseconds
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z", Locale.US);
-        sdf.setTimeZone(TimeZone.getTimeZone("GMT+2"));
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
         return  sdf.format(date);
     }
 

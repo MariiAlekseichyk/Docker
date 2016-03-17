@@ -23,6 +23,7 @@ public class SessionActivity extends AppCompatActivity {
     protected ProgressDialog pDialog;
     protected DockerEntity connTestEnt;
     protected SharedPreferences prefs;
+    public static  ArrayList<HashMap<String,String>> ama;
 
 
     @Override
@@ -34,6 +35,7 @@ public class SessionActivity extends AppCompatActivity {
         String restoredHost = prefs.getString("ConnectionInfo", null);
         connTestEnt = new DockerEntity(restoredHost, pDialog);
         connTestEnt.getApiRequest(DockerEntity.DOCKER_INFO);
+        ama=new ArrayList<HashMap<String, String>>();
     }
 
 
@@ -51,10 +53,10 @@ public class SessionActivity extends AppCompatActivity {
 
     }
 
-    public static void jumpToImg (ArrayList<HashMap<String,String>> arr, View v){
+    public static void jumpToImg ( View v){
         Activity context = (Activity) v.getContext();
         Intent intent = new Intent(context, activity_images.class);
-        intent.putExtra("hashArr", arr);
+        intent.putExtra("hashArr", ama);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         context.startActivity(intent);
 

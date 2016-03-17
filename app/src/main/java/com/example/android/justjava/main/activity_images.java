@@ -22,13 +22,11 @@ public class activity_images extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_images);
         Intent test = getIntent();
-        images =(ArrayList<HashMap<String, String>>) test.getParcelableExtra("hashArr");
+        images =(ArrayList<HashMap<String, String>>) test.getSerializableExtra("hashArr");
         RecyclerView rvImages = (RecyclerView) findViewById(R.id.rvImages);
         imageAdapter adapter = new imageAdapter(images);
-
         rvImages.setAdapter(adapter);
         rvImages.setLayoutManager(new LinearLayoutManager(this));
-
 
     }
 

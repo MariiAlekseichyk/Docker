@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.android.justjava.R;
+import com.example.android.justjava.main.SessionActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,7 +21,7 @@ import java.util.List;
 public class imageAdapter extends  RecyclerView.Adapter<imageAdapter.ViewHolder> {
 
     // / Store a member variable for the contacts
-    private ArrayList<HashMap<String,String>> mImages;
+    private ArrayList<HashMap<String,String>> mImg=(ArrayList<HashMap<String,String>>) SessionActivity.ama;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // Your holder should contain a member variable
@@ -38,8 +39,8 @@ public class imageAdapter extends  RecyclerView.Adapter<imageAdapter.ViewHolder>
             // to access the context from any ViewHolder instance.
             super(itemView);
 
-            imageName = (TextView) itemView.findViewById(R.id.img_id);
-            imageId = (TextView) itemView.findViewById(R.id.image_name);
+            imageName = (TextView) itemView.findViewById(R.id.image_name);
+            imageId = (TextView) itemView.findViewById(R.id.img_id);
             imageDate = (TextView) itemView.findViewById(R.id.date_holder_val);
             imageVirtSize = (TextView) itemView.findViewById(R.id.vurts_holder_val);
 
@@ -47,9 +48,9 @@ public class imageAdapter extends  RecyclerView.Adapter<imageAdapter.ViewHolder>
     }
 
 
-    // Pass in the contact array into the constructor
+    // Pass in the image array into the constructor
     public imageAdapter(ArrayList<HashMap<String,String>> images) {
-        mImages = images;
+        mImg =(ArrayList<HashMap<String,String>>) images;
     }
 
     // Usually involves inflating a layout from XML and returning the holder
@@ -70,27 +71,27 @@ public class imageAdapter extends  RecyclerView.Adapter<imageAdapter.ViewHolder>
     @Override
     public void onBindViewHolder(imageAdapter.ViewHolder viewHolder, int position) {
         // Get the data model based on position
-        HashMap<String, String> image = mImages.get(position);
+        HashMap<String, String> image = mImg.get(position);
 
         // Set item views based on the data model
-        TextView textView = viewHolder.imageName;
-        textView.setText(image.get(DockerEntity.TAG_REPOTAGS));
+        TextView imageName = viewHolder.imageName;
+        imageName.setText(image.get(DockerEntity.TAG_REPOTAGS));
 
-        textView = viewHolder.imageName;
-        textView.setText(image.get(DockerEntity.TAG_ID));
+        TextView imageId = viewHolder.imageId;
+        imageId.setText(image.get(DockerEntity.TAG_ID));
 
-        textView = viewHolder.imageName;
-        textView.setText(image.get(DockerEntity.TAG_CREATED));
+        TextView imageDate = viewHolder.imageDate;
+        imageDate.setText(image.get(DockerEntity.TAG_CREATED));
 
-        textView = viewHolder.imageName;
-        textView.setText(image.get(DockerEntity.TAG_VIRTUALSIZE));
+        TextView imageVirtSize = viewHolder.imageVirtSize;
+        imageVirtSize.setText(image.get(DockerEntity.TAG_VIRTUALSIZE));
 
     }
 
     // Return the total count of items
     @Override
     public int getItemCount() {
-        return mImages.size();
+        return mImg.size();
     }
 
 }
